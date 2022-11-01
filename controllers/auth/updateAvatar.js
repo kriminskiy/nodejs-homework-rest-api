@@ -7,7 +7,7 @@ const avatarsDir = path.join(__dirname, "../../", "public", "avatars");
 const updateAvatar = async (req, res) => {
   const { _id } = req.user;
   const { path: tempUpload, originalname } = req.file;
-  const extention = originalname.spliy(".").pop();
+  const extention = originalname.split(".").pop();
   const filename = `${_id}.${extention}`;
   const resultUpload = path.join(avatarsDir, filename);
   try {
